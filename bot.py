@@ -122,7 +122,7 @@ def get_data_from_google():
         print('An error occurred: %s' % error)
 
 def get_data():
-    req = requests.get("https://91.229.221.53/api/narrations")
+    req = requests.get("https://91.229.###.###/api/narrations")
     response = req.json()
     sell_price = response["show_name"]["end_time_ms"]
 
@@ -146,7 +146,7 @@ def telegram_bot(token):
         if message.text.lower() == "show":
             try:
                 google_results = get_data_from_google()
-                req = requests.get("http://91.229.221.53/api/narrations")
+                req = requests.get("http://91.229.###.###/api/narrations")
                 print(req)
                 if req.status_code == 200:
                     response = req.json()
